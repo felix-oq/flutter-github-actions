@@ -17,15 +17,13 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v2
         with:
-          distribution: 'temurin'
-          java-version: 17
-          check-latest: true
+          distribution: 'zulu'
+          java-version: 12
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
           cache-key: ubuntu-flutter
-      - run: ls
       - name: Lint
         run: flutter analyze
       - name: Test
