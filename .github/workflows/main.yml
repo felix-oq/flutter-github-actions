@@ -30,6 +30,7 @@ jobs:
         run: flutter test
       - name: Build for Android
         run: flutter build apk
+      - run: flutter config --enable-linux-desktop
       - name: Build for Linux
         run: flutter build linux
       - name: Build for Web
@@ -48,6 +49,7 @@ jobs:
           cache-key: macos-flutter
       - name: Build for iOS
         run: flutter build ios --release --no-codesign
+      - run: flutter config --enable-macos-desktop
       - name: Build for MacOS
         run: flutter build macos
 
@@ -62,5 +64,6 @@ jobs:
           channel: stable
           cache: true
           cache-key: windows-flutter
-      - name: Build for iOS
+      - run: flutter config --enable-windows-desktop
+      - name: Build for Windows
         run: flutter build windows
