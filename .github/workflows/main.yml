@@ -19,11 +19,13 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+          check-latest: true
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
           cache-key: ubuntu-flutter
+      run: ls
       - name: Lint
         run: flutter analyze
       - name: Test
