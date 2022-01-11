@@ -25,7 +25,7 @@ jobs:
           channel: stable
           cache: true
           cache-key: ubuntu-flutter
-      run: ls
+      - run: ls
       - name: Lint
         run: flutter analyze
       - name: Test
